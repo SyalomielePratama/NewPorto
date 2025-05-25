@@ -1,0 +1,23 @@
+#hero{
+    background-color: #080d10;
+}
+
+.btn-cv{
+    background-color: #e54b4b !important;
+}
+
+.btn-cv:hover{
+    background-color: brown !important;
+}
+
+i:hover{
+    color: #e54b4b !important;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .btn-cv{
+        max-width: 15rem;
+    }    
+}
+

@@ -1,0 +1,18 @@
+nav{
+    font-size: 1.1em;
+    background-color: #080d10 !important;
+}
+
+.navbar-brand{
+    font-size: 1.2em !important;
+    font-weight: bold;
+}
+
+.navbar-brand:hover{
+    color: #e54b4b !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover{
+    color: #e54b4b !important;
+}
