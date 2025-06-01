@@ -4,7 +4,7 @@ import '../assets/css/Hero.css';
 
 const Hero = () => {
   const [text, setText] = useState('');
-  const fullText = "I&'am a Passionate Web Developer And Graphic Designer";
+  const fullText = "I'am a Passionate Web Developer And Graphic Designer";
   const index = useRef(0);
   const intervalId = useRef(null);
 

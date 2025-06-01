@@ -110,7 +110,7 @@ export const portfolioItems = [
     title: "Green Charity Landing Page",
     category: "web",
     images: [greenImg1, greenImg2, greenImg3, greenImg4, greenImg5, greenImg6],
-    link: "https://syalomielepratama.github.io/Landing-Page-Fashion/",
+    link: "https://syalomielepratama.github.io/green-charity/",
     deskripsi: "Sebuah Landing Page Green Charity yang dibangun menggunakan HTML, CSS, dan JavaScript. Landing Page ini dirancang dengan desain yang menarik dan intuitif, serta memiliki fitur-fitur yang memudahkan pengguna dalam mengetahui tentang Green Charity.",
     stack: ["HTML", "CSS", "JavaScript", "Bootstrap"] // Added stack for this project
   },
