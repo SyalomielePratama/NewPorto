@@ -1,0 +1,18 @@
+#available {
+    min-height: 30vh !important;
+    background-color: #000000 !important;
+    display: flex;
+    align-items: center;
+    color: white !important;
+}
+
+.contact-link {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.contact-link:hover {
+    color: #e14c47 !important;
+    text-decoration: underline !important;
+    transition: all 0.3s ease;
+}

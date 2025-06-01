@@ -34,3 +34,9 @@
 .me-text{
   color:#e54b4b !important;
 }
+
+.skill-text-icon:hover{
+  color:#e54b4b !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}

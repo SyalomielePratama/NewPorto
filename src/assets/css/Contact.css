@@ -1,0 +1,16 @@
+.touch-text {
+  color: #e14c47 !important;
+}
+
+.contact-info ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* jarak antara icon dan teks */
+  margin-bottom: 10px; /* beri jarak antar list item */
+}
+
+.contact-info ul li svg {
+  flex-shrink: 0;        /* icon tidak mengecil */
+  width: 24px;           /* lebar tetap icon */
+  height: 24px;
+}

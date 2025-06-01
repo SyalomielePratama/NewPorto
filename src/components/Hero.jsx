@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import '../assets/css/Hero.css';
 
 const Hero = () => {
@@ -15,38 +16,77 @@ const Hero = () => {
       } else {
         clearInterval(intervalId.current);
       }
-    }, 40);
+    }, 20); // Typing speed: faster now
 
     return () => clearInterval(intervalId.current);
   }, []);
+
+  const delayAfterTyping = fullText.length * 0.02; // Delay for other elements
 
   return (
     <section id="hero" className="d-flex align-items-center" style={{ minHeight: '100vh' }}>
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <h1 className="display-4 fw-bold text-white">Syalomiele Pratama</h1>
-            <p className="lead text-white">{text}</p>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2 btn-cv border-0">Download CV</button>
+            <motion.h1
+              className="display-4 fw-bold text-white"
+              initial={{ y: -30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              Syalomiele Pratama
+            </motion.h1>
+
+            <motion.p
+              className="lead text-white"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: delayAfterTyping, duration: 0.5 }}
+            >
+              {text}
+            </motion.p>
+
+            <motion.div
+              className="d-grid gap-2 d-md-flex justify-content-md-start"
+              initial={{ opacity: 0, x: -15 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: delayAfterTyping + 0.2, duration: 0.4 }}
+            >
+              <motion.a
+                href="/pdf/Resume.pdf"
+                download="Syalomiele_Pratama_CV.pdf"
+                className="btn btn-primary btn-lg px-4 me-md-2 btn-cv border-0"
+                whileHover={{ scale: 1.05, backgroundColor: '#b34444' }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Download CV
+              </motion.a>
+
               <div className="social-icons d-flex my-auto fs-5 gap-2">
-                <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" className="me-3">
-                  <i className="bi bi-pinterest text-white"></i>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="me-3">
-                  <i className="bi bi-instagram text-white"></i>
-                </a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <i className="bi bi-linkedin text-white"></i>
-                </a>
+                {[
+                  { href: "https://id.pinterest.com/temancurhatmu/", icon: "bi-pinterest" },
+                  { href: "https://www.instagram.com/_sytama_", icon: "bi-instagram" },
+                  { href: "https://id.linkedin.com/in/syalomiele-pratama-793229286", icon: "bi-linkedin" }
+                ].map(({ href, icon }, i) => (
+                  <motion.a
+                    key={icon}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="me-3"
+                    whileHover={{ color: '#e54b4b', scale: 1.2 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <i className={`bi ${icon} text-white`}></i>
+                  </motion.a>
+                ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Hero;
-
